@@ -1,2 +1,2 @@
-# typst_template
-Template of typst repository
+# typst\_template
+My typst template.
