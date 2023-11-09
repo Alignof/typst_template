@@ -1,5 +1,24 @@
 // This function gets your whole document as its `body` and formats
 // it as an article in the style of the IEEE.
+
+#let quote_block(body) = {
+  block(
+    width: 100%,
+    fill: silver,
+    inset: 8pt,
+    body
+  )
+}
+
+#let terminal(body) = {
+  block(
+    width: 100%,
+    fill: black,
+    inset: 8pt,
+    text(white, body)
+  )
+}
+
 #let style(
   // The paper's title.
   title: "Paper Title",
@@ -33,6 +52,11 @@
 
   // Set image size.
   set image(width: 80%)
+
+  // Set table caption upper.
+  show figure.where(
+    kind: table
+  ): set figure.caption(position: top)
 
   // Configure the page.
   set page(
@@ -78,24 +102,6 @@
         )),
         it.body,
       ))
-    )
-  }
-
-  let quote_block(body) = {
-    block(
-      width: 100%,
-      fill: silver,
-      inset: 8pt,
-      body
-    )
-  }
-
-  let terminal(body) = {
-    block(
-      width: 100%,
-      fill: black,
-      inset: 8pt,
-      text(white, body)
     )
   }
 
