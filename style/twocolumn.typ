@@ -161,6 +161,7 @@
   // Display bibliography.
   if bibliography-file != none {
     show bibliography: set text(8pt)
+    set text(lang: "en")
     bibliography(bibliography-file, title: text(10pt)[References], style: "ieee")
   }
 }
