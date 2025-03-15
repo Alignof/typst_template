@@ -81,15 +81,8 @@
   )
 
   set raw(theme: "../monokai.tmTheme", tab-size: 4)
-  show raw: it => block(
-    width: 100%,
-    fill: rgb("#1d2433"),
-    inset: 8pt,
-    radius: 5pt,
-    text(fill: rgb("#c2cacc"), it)
-  )
-  show raw.line: it => {
-    box(
+  show raw: it => {
+    show raw.line: it => box(
       width: 100%,
       align(horizon, stack(
         dir: ltr,
@@ -102,6 +95,14 @@
         )),
         it.body,
       ))
+    )
+
+    block(
+      width: 100%,
+      fill: rgb("#1d2433"),
+      inset: 8pt,
+      radius: 5pt,
+      text(fill: rgb("#c2cacc"), it)
     )
   }
 
@@ -130,8 +131,7 @@
     #authors.map(author => text()[*#author.name* #footnote(numbering: "*")[#author.email]]).join(", ")
   ])
 
-  set par(justify: true, first-line-indent: 1em)
-  show par: set block(spacing: 0.65em)
+  set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
 
   // Display abstract and index terms.
   if abstract != none [
