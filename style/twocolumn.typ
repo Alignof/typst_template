@@ -1,23 +1,5 @@
 // This function gets your whole document as its `body` and formats
 
-#let quote_block(body) = {
-  block(
-    width: 100%,
-    fill: silver,
-    inset: 8pt,
-    body
-  )
-}
-
-#let terminal(body) = {
-  block(
-    width: 100%,
-    fill: black,
-    inset: 8pt,
-    text(white, body)
-  )
-}
-
 // it as an article in the style of the IEEE.
 #let style(
   // The paper's title.

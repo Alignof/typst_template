@@ -1,4 +1,6 @@
 #import "style/report.typ": *
+#import "style/util.typ": terminal
+
 #show: style.with(
   title: "typst template",
   authors: (
