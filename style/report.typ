@@ -113,7 +113,10 @@
     #authors.map(author => text()[*#author.name* #footnote(numbering: "*")[#author.email]]).join(", ")
   ])
 
-  set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
+  set par(
+      first-line-indent: (amount: 1em, all: true),
+      justify: true,
+  )
 
   // Display abstract and index terms.
   if abstract != none [

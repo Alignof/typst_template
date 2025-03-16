@@ -134,7 +134,10 @@
 
   // Start two column mode and configure paragraph properties.
   show: columns.with(2, gutter: 12pt)
-  set par(justify: true, first-line-indent: 1em)
+  set par(
+      first-line-indent: (amount: 1em, all: true),
+      justify: true,
+  )
   show par: set block(spacing: 0.65em)
 
   // Display the paper's contents.
