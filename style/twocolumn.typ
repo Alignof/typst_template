@@ -1,23 +1,5 @@
 // This function gets your whole document as its `body` and formats
 
-#let quote_block(body) = {
-  block(
-    width: 100%,
-    fill: silver,
-    inset: 8pt,
-    body
-  )
-}
-
-#let terminal(body) = {
-  block(
-    width: 100%,
-    fill: black,
-    inset: 8pt,
-    text(white, body)
-  )
-}
-
 // it as an article in the style of the IEEE.
 #let style(
   // The paper's title.
@@ -152,7 +134,10 @@
 
   // Start two column mode and configure paragraph properties.
   show: columns.with(2, gutter: 12pt)
-  set par(justify: true, first-line-indent: 1em)
+  set par(
+      first-line-indent: (amount: 1em, all: true),
+      justify: true,
+  )
   show par: set block(spacing: 0.65em)
 
   // Display the paper's contents.

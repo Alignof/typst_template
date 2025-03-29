@@ -1,24 +1,6 @@
 // This function gets your whole document as its `body` and formats
 // it as an article in the style of the IEEE.
 
-#let quote_block(body) = {
-  block(
-    width: 100%,
-    fill: silver,
-    inset: 8pt,
-    body
-  )
-}
-
-#let terminal(body) = {
-  block(
-    width: 100%,
-    fill: black,
-    inset: 8pt,
-    text(white, body)
-  )
-}
-
 #let style(
   // The paper's title.
   title: "Paper Title",
@@ -128,8 +110,11 @@
     #authors.map(author => text()[*#author.name* #footnote(numbering: "*")[#author.organization, #author.email]]).join(", ")
   ])
 
-  set par(justify: true, first-line-indent: 1em)
   show par: set block(spacing: 0.65em)
+  set par(
+      first-line-indent: (amount: 1em, all: true),
+      justify: true,
+  )
 
   // Display abstract and index terms.
   if abstract != none [
