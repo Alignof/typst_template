@@ -5,6 +5,9 @@
   // The paper's title.
   title: "Paper Title",
 
+  // The paper's header.
+  header: none,
+
   // An array of authors. For each author you can specify a name,
   // department, organization, location, and email. Everything but
   // but the name is optional.
@@ -54,7 +57,7 @@
       )
     },
     header: align(right, text(8pt)[
-      xxx第1回レポート
+        #header
     ]),
     //footer: align(left, text(8pt)[
     //  $copyright$2023 xyz Society of Japan 

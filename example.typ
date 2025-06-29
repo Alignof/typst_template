@@ -3,6 +3,7 @@
 
 #show: style.with(
   title: "typst template",
+  header: "example",
   authors: (
     (
       name: "n.takana",
